@@ -15,5 +15,5 @@ class FollowingTheTAsInstructionsError(Exception):
 raise FollowingTheTAsInstructionsError
 
 # Edit the following two lines:
-username = "<pick a username here>"
-password = "<pick a password here>"
+username = "sandy"
+password = "cmput404"
