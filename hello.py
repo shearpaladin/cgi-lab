@@ -14,10 +14,11 @@ print("<p>Hello World cmput404 class!</p>")
 
 #Q2: Print out QUERY_STRING = parameter
 if "QUERY_STRING" in os.environ:
-    print(f"<em>QUERY_STRING={os.environ['QUERY_STRING']}</em>")
+    print(f"<p>QUERY_STRING={os.environ['QUERY_STRING']}</p>")
 
 #Q3: Print out user's browser information
-
+if "HTTP_USER_AGENT" in os.environ:
+    print(f"<p>BROWSER={os.environ['HTTP_USER_AGENT']}></p>")
 
 '''
 for param in os.environ.keys():
