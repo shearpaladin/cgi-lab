@@ -40,7 +40,7 @@ def login_page():
     return _wrapper(r"""
     <h1> Welcome! </h1>
 
-    <form method="POST" action="login.py">
+    <form method="POST" action="mylogin.py">
         <label> <span>Username:</span> <input autofocus type="text" name="username"></label> <br>
         <label> <span>Password:</span> <input type="password" name="password"></label>
 
@@ -77,7 +77,7 @@ def after_login_incorrect():
 
     <p> Incorrect username or password (hint: <span class="spoilers"> Check
         <code>secret.py</code>!</span>)
-    <p> <a href="login.py"> Try again. </a>
+    <p> <a href="mylogin.py"> Try again. </a>
     """)
 
 

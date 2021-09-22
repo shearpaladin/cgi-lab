@@ -6,7 +6,7 @@ print("<p>Hello World cmput404 class!</p>")
 
 
 #Q1: Print environment all variables
-#print(os.environ)
+print(os.environ)
 
 
 #json_object = json.dumps(dict(os.environ), indent = 2)
