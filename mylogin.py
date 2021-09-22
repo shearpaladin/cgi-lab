@@ -9,6 +9,8 @@ from templates import login_page, secret_page, after_login_incorrect
 cgitb.enable()
 
 
+
+
 #Create instance of FieldStorage
 form = cgi.FieldStorage()
 
@@ -20,13 +22,14 @@ password = form.getvalue('password')
 
 # Q5: SHOW Cookie If Login is correct
 cookie_valid = False
-cookie = cookies.SimpleCookie()
+cookie = cookies.SimpleCookie().get(os.environ.get('HTTP_COOKIE'))
+
+
 cookie_username = secret.username
 cookie_password = secret.password
 
+#print("Content-type: text/html")
 # Set cookie flag to true if secret user and pass match
-if (cookie_username == username and cookie_password == password):
-    cookie_valid = True
 
 
 
@@ -38,14 +41,13 @@ print("</head>")
 print("<body>")
 
 # Check if Cookie is Set to display login is correct
-if cookie_valid:
-    print("Set-Cookie: username={username}")
-    print("Set-Cookie: password={password}")
-
-
+if (cookie_username == username and cookie_password == password):
+    print("Set-Cookie: loggedin=true")
+    cookie_valid = True
 
 
 print("<p><b>Username</b> %s <b>password</b> %s</p>" % (username, password))
+
 #Q6
 if not username and not password:
     print(login_page())
